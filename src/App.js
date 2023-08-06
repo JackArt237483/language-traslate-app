@@ -1,10 +1,19 @@
-import './App.css';
+import React from 'react';
+import LanguageSelector from './components/LanguageSelector';
+import WelcomeMessage from './components/WelcomeMessage';
+import { LanguageProvider } from './components/LanguageContext';
 
-function App() {
+const App = () => {
+  const name = 'John';
+
   return (
-    <div className="App">
-    </div>
+    <LanguageProvider>
+      <div>
+        <LanguageSelector />
+        <WelcomeMessage name={name} />
+      </div>
+    </LanguageProvider>
   );
-}
+};
 
 export default App;
